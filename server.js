@@ -5,7 +5,6 @@ const logger = require('morgan');
 
 require('dotenv').config();
 
-// Connect to the database
 require('./config/database'); 
 
 const app = express();
@@ -16,7 +15,11 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('./config/checkToken'));
-app.use('/api/users', require('./routes/api/users'));  
+app.use('/api/users', require('./routes/api/users')); 
+app.use('/api/orders', require('./routes/api/orders'));
+
+const ensureLoggedIn = require('./config/ensureLoggedIn'); 
+app.use('/api/packages', ensureLoggedIn, require('./routes/api/packages'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
