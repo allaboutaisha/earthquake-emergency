@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import * as UserService from '../../utilities/users-service'
 // import UserLogOut from './UserLogOut';
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ setUser, cart }) {
     function handleLogOut() {
         UserService.logOut()
         setUser(null)
     }
+    if (cart) console.log(cart.totalQty)
   return (
     <nav>
       <Link to="/orders">Order History</Link> 

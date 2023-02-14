@@ -1,26 +1,40 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
-import Cart from '../Cart/Cart';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import * as ordersAPI from '../../utilities/orders-api';
 
 export default function App() {
-  const [user, setUser] = useState(getUser())
+  const [user, setUser] = useState(getUser());
+  const [cart, setCart] = useState(null);
+  const navigate = useNavigate();
+
+  async function handleChangeQty(packageItemId, newQty) {
+    const updatedCart = await ordersAPI.setPackageQtyInCart(packageItemId, newQty)
+    setCart(updatedCart)
+  }
+
+  async function handleCheckout() {
+    await ordersAPI.checkout()
+    navigate('/orders')
+  }
+
   return (
     <main className="App">
       { user ?
         <>  
-          <NavBar user={user} setUser={setUser} />
+          <NavBar user={user} setUser={setUser} cart={cart} />
           <Routes>
-            <Route path="/home" element={<HomePage user={user} setUser={setUser} /> } />
+            <Route path="/home" element={<HomePage user={user} setUser={setUser} setCart={setCart} /> } />
             <Route path="/orders" element={<OrderHistoryPage /> } />
-            <Route path="/orders/cart" element={<Cart /> } />
+            <Route path="/orders/cart" element={<OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} /> } />
 
-            <Route path="/*" element={<Navigate to="/orders/new" />} />
+            <Route path="/*" element={<Navigate to="/home" />} />
           </Routes> 
         </>  
         :
