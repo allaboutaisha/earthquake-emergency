@@ -20,7 +20,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
           <button
             className="btn-xs"
             onClick={() => handleChangeQty(lineItem.packageItem._id, lineItem.qty + 1)}
-          >+</button>
+            >+</button>
         }
       </div>
       <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>

@@ -20,7 +20,7 @@ async function addToCart(req, res) {
 
 async function setPackageQtyInCart(req, res) {
   const cart = await Order.getCart(req.user._id)
-  await cart.setPackageQty(req.body.packageId, req.body.newQty)
+  await cart.setPackageQty(req.body.packageItemId, req.body.newQty)
   res.json(cart)
 }
 

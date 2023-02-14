@@ -43,7 +43,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             </section>
           </>
           :
-          <div className="?">???</div>
+          <div className="?">Add Package to Cart</div>
         }
       </div>
     </div>

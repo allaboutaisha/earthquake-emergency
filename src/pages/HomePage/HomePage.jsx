@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import * as packagesAPI from '../../utilities/packages-api';
 import * as ordersAPI from '../../utilities/orders-api'
-// import './NewOrderPage.css';
+// import './HomePage.css';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../../components/Logo/Logo';
 import PackageList from '../../components/PackageList/PackageList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
+// import Cart from '../Cart/Cart';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
-export default function NewOrderPage({ user, setUser }) {
+export default function HomePage({ user, setUser }) {
     const [thePackages, setThePackages] = useState([]);
     const [activeCat, setActiveCat] = useState('');
     const [cart, setCart] = useState(null)
@@ -30,9 +31,7 @@ export default function NewOrderPage({ user, setUser }) {
 
         async function getCart() {
             const cart = await ordersAPI.getCart()
-            console.log('hi')
             setCart(cart)
-            console.log(cart)
           }
         getCart()
 
@@ -53,9 +52,8 @@ export default function NewOrderPage({ user, setUser }) {
         navigate('/orders')
       }
 
-
     return (
-        <main className="NewOrderPage">
+        <main className="HomePage">
           <aside>
             {/* <Logo /> */}
             <CategoryList
@@ -75,6 +73,7 @@ export default function NewOrderPage({ user, setUser }) {
             handleChangeQty={handleChangeQty}
             handleCheckout={handleCheckout}
           />
+          {/* <Cart/> */}
         </main>
       );
     }
