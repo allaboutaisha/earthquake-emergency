@@ -1,9 +1,10 @@
 import './LineItem.css';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
+    console.log(lineItem.packageItem.category)
   return (
     <div className="LineItem">
-      <div className="flex-ctr-ctr">{lineItem.packageItem.image}</div>
+      <div className="flex-ctr-ctr">{lineItem.packageItem.category.name}</div>
       <div className="flex-ctr-ctr flex-col">
         <span className="align-ctr">{lineItem.packageItem.packageName}</span>
         <span>{lineItem.packageItem.price.toFixed(2)}</span>

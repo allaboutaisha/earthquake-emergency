@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 2vmin;
+    margin: 3.5vmin;
     padding: 2vmin;
-    color: var(--text-light);
+    color: rgb(40, 39, 39);
     background-color: var(--white);
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
@@ -15,15 +15,16 @@
 
 .PackageListItem:hover {
     border-width: 0.2vmin;
+    color: black;
     font-weight: bold;
+    transform: scale(1.1);
+    transition-duration: 0.3s;
   }  
 
 .PackageListItem .image {
     height: 8vw;
     width: 8vw;
     font-size: 4vw;
-    background-color: var(--tan-1);
-    border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
 }
   
@@ -35,17 +36,16 @@
 .PackageListItem .buy span {
     font-size: 1.7vw;
     text-align: center;
-    color: var(--text-light);
+    color: rgba(40, 39, 39, 0.689);
 }
 
 .PackageListItem .packageName {
     font-size: 2vw;
     text-align: center;
-    color: var(--text-light);
 }
 
 .PackageListItem .details {
     font-size: 1.7vw;
     text-align: center;
-    color: var(--text-light);
+    color: rgba(40, 39, 39, 0.689);
 }

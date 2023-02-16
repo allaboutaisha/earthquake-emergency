@@ -13,10 +13,12 @@ const cartLabel = cart && cart.totalQty > 0 ? `CART [${cart.totalQty}]` : 'CART'
   return (
     <nav>
         <div id='welcome'>WELCOME <span style={{ fontStyle: 'italic' }}>{user.name}</span></div>
-        <Link to="/home">HOME</Link>
-        <Link to="/orders">ORDER HISTORY</Link> 
-        <Link to="/orders/cart">{cartLabel}</Link>
-        <Link to='' onClick={handleLogOut}>LOG OUT</Link>
+        <div className='links'>
+            <Link to="/home">HOME</Link>
+            <Link to="/orders">ORDER HISTORY</Link> 
+            <Link to="/orders/cart">{cartLabel}</Link>
+            <Link to='' onClick={handleLogOut}>LOG OUT</Link>
+        </div>
     </nav>
   );
 }

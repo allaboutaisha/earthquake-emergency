@@ -2,13 +2,14 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 3vmin;
+    padding: 15vmin;
     font-size: 2vmin;
-    color: var(--text-light);
+    /* color: var(--text-light); */
   }
   
   .OrderDetail .section-heading {
-    width: 100%
+    width: 100%;
+    font-size: 3vmin;
   }
   
   .OrderDetail .line-item-container {
@@ -40,8 +41,8 @@
     justify-content: flex-end;
   }
   
-  /* .OrderDetail .hungry {
+  .OrderDetail .Empty {
     position: absolute;
-    top: 50vh;
-    font-size: 2vmin;
-  } */
+    top: 30vh;
+    font-size: 3vmin;
+  }

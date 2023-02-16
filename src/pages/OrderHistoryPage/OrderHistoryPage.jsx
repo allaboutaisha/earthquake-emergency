@@ -1,5 +1,6 @@
 import React from 'react'
 import { checkToken } from '../../utilities/users-service';
+import './OrderHistoryPage.css'
 
 export default function OrderHistoryPage() {
     async function handleCheckToken() { 

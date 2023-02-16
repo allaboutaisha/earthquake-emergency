@@ -31,7 +31,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(0, 0, 0);
   color: white;
-  padding: 2vmin;
   height: 100vh;
 }
 
@@ -128,7 +127,7 @@ input:focus {
 }
 
 button, a.button {
-  margin: 1vmin;
+  margin: vmin;
   padding: 1vmin;
   color: var(--white);
   background-color: var(--black);
@@ -142,9 +141,20 @@ button, a.button {
   cursor: pointer;
 }
 
+a.button {
+  border: none;
+}
+
+a.button:hover {
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
 button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
+  margin: 2vmin;
 }
 
 button.btn-xs {

@@ -6,6 +6,8 @@ nav {
     z-index: 1;
     color: white;
     padding: 2rem;
+    /* white-space: nowrap; */
+    /* display: inline-block; */
 }
 
 #welcome {
@@ -13,11 +15,16 @@ nav {
     padding: 3px;
 }
 
+.links {
+    text-align: right;
+}
+
 nav a {
     white-space: nowrap;
     padding: 3px;
     text-decoration: none;
     color: white;
+    display: inline-block;
 }
 
 nav a:hover {
