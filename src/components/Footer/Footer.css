@@ -14,8 +14,18 @@ footer {
 }
   
 .footer-list li {
-    margin: 0.3rem 0;
+    margin: 0.1rem 0;
 }
+
+.footer-list .icons {
+    display: flex;
+    justify-content: right;
+    gap: 3px;
+}
+
+.footer-list .icons svg {
+    font-size: 28px;
+}  
 
 a {
     color: white;
@@ -24,5 +34,6 @@ a {
   
 .footer-text {
     font-size: 0.5rem;
+    margin-top: 30px;
 }
   

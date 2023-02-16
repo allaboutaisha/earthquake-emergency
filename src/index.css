@@ -155,6 +155,8 @@ button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
   margin: 2vmin;
+  display: flex;
+  justify-content: center;
 }
 
 button.btn-xs {

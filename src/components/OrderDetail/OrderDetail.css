@@ -4,7 +4,7 @@
     align-items: center;
     padding: 15vmin;
     font-size: 2vmin;
-    /* color: var(--text-light); */
+    color: black;
   }
   
   .OrderDetail .section-heading {
@@ -44,5 +44,6 @@
   .OrderDetail .Empty {
     position: absolute;
     top: 30vh;
-    font-size: 3vmin;
+    font-size: 2vmin;
+    color: rgba(202, 196, 196, 0.287);
   }
