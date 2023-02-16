@@ -31,3 +31,7 @@ app.listen(port, function() {
   console.log(`Express app running on port ${port}`)
 }); 
 
+// API for PAYMENT
+// app.post('payment/create, async (req, res) => { 
+//  const total = req.body.amount
+//  console.log('Payment Request received for this", total)})

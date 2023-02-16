@@ -1,9 +1,10 @@
-// import './PackageListItem.css';
+import './PackageListItem.css';
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 export default function PackageListItem({ packageItem, handleAddToOrder }) {
-  return (
+    return (
     <div className="PackageListItem">
-      <div className="image flex-ctr-ctr">{packageItem.image}</div>
+      <div className="image flex-ctr-ctr">{packageItem.packageName === 'Premium Package' ? <FaStar style={{color: "gold"}} /> : <FaRegStar style={{color: "gold"}} />}</div>
       <div className="name">{packageItem.packageName}</div>
       <div className="details">{packageItem.details}</div>
       <div className="buy">

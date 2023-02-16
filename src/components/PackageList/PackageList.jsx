@@ -1,4 +1,4 @@
-// import './PackageList.css';
+import './PackageList.css';
 import PackageListItem from '../PackageListItem/PackageListItem';
 
 export default function PackageList({ thePackages, handleAddToOrder }) {

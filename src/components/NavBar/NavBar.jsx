@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom';
-import * as UserService from '../../utilities/users-service'
+import * as UserService from '../../utilities/users-service';
+import './NavBar.css';
 // import UserLogOut from './UserLogOut';
 
-export default function NavBar({ setUser, cart }) {
+export default function NavBar({ user, setUser, cart }) {
     function handleLogOut() {
         UserService.logOut()
         setUser(null)
     }
-    if (cart) console.log(cart.totalQty)
+// const cartTotalQty = cart && cart.totalQty ? cart.totalQty : '';
+const cartLabel = cart && cart.totalQty > 0 ? `CART [${cart.totalQty}]` : 'CART';
   return (
     <nav>
-      <Link to="/orders">Order History</Link> 
-      <Link to="/home">Home</Link> 
-      {/*  /home */}
-      <Link to="/orders/cart">Cart</Link>
-      <Link to='' onClick={handleLogOut}>Log Out</Link>
+        <div id='welcome'>WELCOME <span style={{ fontStyle: 'italic' }}>{user.name}</span></div>
+        <Link to="/home">HOME</Link>
+        <Link to="/orders">ORDER HISTORY</Link> 
+        <Link to="/orders/cart">{cartLabel}</Link>
+        <Link to='' onClick={handleLogOut}>LOG OUT</Link>
     </nav>
   );
 }

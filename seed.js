@@ -15,21 +15,21 @@ const Package = require('./models/package');
       {name: 'Meals', sortOrder: 50},
       {name: 'First Aid', sortOrder: 60},
     ]);
-  
+
     await Package.deleteMany({});
     const packages = await Package.create([
-        {packageName: 'Premium', image: '', details: '10 blankets, 10 jackets, 10 gloves, 10 hats', category: categories[0], price: 900.00},
-        {packageName: 'Standard', image: '', details: '5 jackets, 5 gloves, 5 hats', category: categories[0], price: 500.00},
-        {packageName: 'Premium', image: '', details: '30 body soap, 20 shampoo/conditioner, 30 toothpaste, 50 toilet paper, feminine care, and towelettes', category: categories[1], price: 500.00},
-        {packageName: 'Standard', image: '', details: '10 body soap, 10 shampoo/conditioner, 15 toothpaste, 25 toilet paper feminine care, and towelettes', category: categories[1], price: 300.00},
-        {packageName: 'Premium', image: '', details: 'Diapers, clothes, formula, and toys (100ct)', category: categories[2], price: 900.00},
-        {packageName: 'Standard', image: '', details: 'Diapers, clothes, formula, and toys (50ct)', category: categories[2], price: 500.00},
-        {packageName: 'Premium', image: '', details: 'Tents to shelter 50 individuals', category: categories[3], price: 900.00},
-        {packageName: 'Standard', image: '', details: 'Tents to shelter 25 individuals', category: categories[3], price: 500.00},
-        {packageName: 'Premium', image: '', details: 'Hot meals and drinks to serve 50 people for one week', category: categories[4], price: 1400.00},
-        {packageName: 'Standard', image: '', details: 'Hot meals and drinks to serve 25 people for one week', category: categories[4], price: 700.00},
-        {packageName: 'Premium', image: '', details: 'Bandaids, ointments, flashlights, and OTC medication for 50 individuals', category: categories[5], price: 800.00},
-        {packageName: 'Standard', image: '', details: 'Bandaids, ointments, flashlights, and OTC medication for 25 individuals', category: categories[5], price: 400.00},
+        {packageName: 'Premium Package', details: '10 blankets, 10 jackets, 10 gloves, and 10 hats', category: categories[0], price: 900.00},
+        {packageName: 'Standard Package', details: '5 blankets, 5 jackets, 5 gloves, and 5 hats', category: categories[0], price: 500.00},
+        {packageName: 'Premium Package', details: '30 body soap, 20 shampoo/conditioner, 30 toothpaste, and 50 toilet paper, feminine care, and towelettes', category: categories[1], price: 500.00},
+        {packageName: 'Standard Package', details: '10 body soap, 10 shampoo/conditioner, 15 toothpaste, and 25 toilet paper feminine care, and towelettes', category: categories[1], price: 300.00},
+        {packageName: 'Premium Package', details: '100 ct of diapers, clothes, formula, and toys', category: categories[2], price: 800.00},
+        {packageName: 'Standard Package', details: '50 ct of diapers, clothes, formula, and toys', category: categories[2], price: 400.00},
+        {packageName: 'Premium Package', details: 'Tents to shelter 100 individuals', category: categories[3], price: 500.00},
+        {packageName: 'Standard Package', details: 'Tents to shelter 50 individuals', category: categories[3], price: 250.00},
+        {packageName: 'Premium Package', details: 'Hot meals and drinks to serve 80 people for one week', category: categories[4], price: 1400.00},
+        {packageName: 'Standard Package', details: 'Hot meals and drinks to serve 40 people for one week', category: categories[4], price: 700.00},
+        {packageName: 'Premium Package', details: '100 ct of bandaids, ointments, flashlights, and OTC medication', category: categories[5], price: 300.00},
+        {packageName: 'Standard Package', details: '50 ct of bandaids, ointments, flashlights, and OTC medication', category: categories[5], price: 150.00},
     ]);
     console.log(packages)
     process.exit();

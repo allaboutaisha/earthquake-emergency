@@ -7,6 +7,7 @@ import HomePage from '../HomePage/HomePage';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import Footer from '../../components/Footer/Footer';
 import * as ordersAPI from '../../utilities/orders-api';
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
 
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes> 
+          <Footer />
         </>  
         :
         <AuthPage setUser= {setUser} />

@@ -6,7 +6,6 @@ const packageSchema = new Schema({
         type: String,
         required: true
     },
-    image: String,
     details: String,
     category: {
         type: Schema.Types.ObjectId,
