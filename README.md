@@ -1,4 +1,4 @@
-# earthquake-emergency
+# earthquake-emergency-ecommerce
 The Earthquake Emergency E-commerce allows users to purchase a package for individuals affected from the catatrosphic earthquakes in Turkey and Syria that occurred on February 6th.
 https://herokuapp.com/
 
@@ -6,7 +6,7 @@ https://herokuapp.com/
 <img width="1280" alt="Screen Shot 2023-02-16 at 9 55 23 PM" src="https://user-images.githubusercontent.com/118096397/219538184-9fb099e7-aeca-4660-a0b4-074c97871a95.png">
 
 # Wireframe
-
+[INCLUDE HERE]
 
 # As a User
 - AAU, I want to be able to sign up, log in, and log out
