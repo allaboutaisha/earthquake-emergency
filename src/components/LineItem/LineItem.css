@@ -1,7 +1,7 @@
 .LineItem {
     width: 100%;
     display: grid;
-    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
+    grid-template-columns: 40vw 6vw 19.5vw 5vw;
     padding: 1vmin 0;
     color: rgba(40, 39, 39, 0.689);
     background-color: var(--white);

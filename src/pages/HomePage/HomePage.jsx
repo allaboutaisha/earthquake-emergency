@@ -148,12 +148,12 @@ export default function HomePage({ user, setUser, setCart }) {
             setActiveCat={setActiveCat}
           />
           <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-          <UserLogOut user={user} setUser={setUser} />
           <h1>PACKAGES</h1>
           <PackageList
             thePackages={thePackages.filter(packageItem => packageItem.category.name === activeCat)}
             handleAddToOrder={handleAddToOrder}
           />
+          <UserLogOut user={user} setUser={setUser} />
         </main>
       );
     }
