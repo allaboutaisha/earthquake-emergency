@@ -6,7 +6,7 @@ The Earthquake Emergency E-commerce app is designed to help individuals affected
 ## Wireframe:
 ![](./Wireframe.png)
 
-## As a User:
+## User Stories:
 - AAU, I want to be able to sign up, log in, and log out
 - AAU, I want to be able to see items for sale by category
 - AAU, I want to be able to add an item to my cart
