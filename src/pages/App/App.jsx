@@ -27,21 +27,16 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
         <div className="Container">  
-          <NavBar user={user} setUser={setUser} cart={cart} />
+          <NavBar cart={cart} />
           <Routes>
-            <Route path="/home" element={<HomePage user={user} setUser={setUser} setCart={setCart} /> } />
+            <Route path="/home" element={<HomePage setCart={setCart} /> } />
             <Route path="/orders" element={<OrderHistoryPage /> } />
             <Route path="/orders/cart" element={<OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} /> } />
-
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes> 
           <Footer />
         </div>
-        :
-        <AuthPage setUser= {setUser} />
-      }
     </main>
   ); 
 } 

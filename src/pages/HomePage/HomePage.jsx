@@ -4,11 +4,10 @@ import * as ordersAPI from '../../utilities/orders-api';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
-// import Logo from '../../components/Logo/Logo';
+import 'react-slideshow-image/dist/styles.css'; 
 import PackageList from '../../components/PackageList/PackageList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+// import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 export default function HomePage({ user, setUser, setCart }) {
     const [thePackages, setThePackages] = useState([]);
@@ -25,13 +24,13 @@ export default function HomePage({ user, setUser, setCart }) {
             setActiveCat(categoriesRef.current[1]);
             setThePackages(packages);
         }
-        getPackages();
+        // getPackages();
 
         async function getCart() {
             const cart = await ordersAPI.getCart()
             setCart(cart)
           }
-        getCart()
+        // getCart()
 
     }, []);
 
@@ -153,7 +152,7 @@ export default function HomePage({ user, setUser, setCart }) {
             thePackages={thePackages.filter(packageItem => packageItem.category.name === activeCat)}
             handleAddToOrder={handleAddToOrder}
           />
-          <UserLogOut user={user} setUser={setUser} />
+          {/* <UserLogOut user={user} setUser={setUser} /> */}
         </main>
       );
     }

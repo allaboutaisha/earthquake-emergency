@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser, cart }) {
 const cartLabel = cart && cart.totalQty > 0 ? `CART [${cart.totalQty}]` : 'CART';
   return (
     <nav>
-        <div id='welcome'>WELCOME <span style={{ fontStyle: 'italic' }}>{user.name}</span></div>
+        {/* <div id='welcome'>WELCOME <span style={{ fontStyle: 'italic' }}>{user.name}</span></div> */}
         <div className='links'>
             <Link to="/home">HOME</Link>
             <Link to="/orders">ORDER HISTORY</Link> 
