@@ -15,9 +15,18 @@ const cartLabel = cart && cart.totalQty > 0 ? `CART [${cart.totalQty}]` : 'CART'
         {/* <div id='welcome'>WELCOME <span style={{ fontStyle: 'italic' }}>{user.name}</span></div> */}
         <div className='links'>
             <Link to="/home">HOME</Link>
-            <Link to="/orders">ORDER HISTORY</Link> 
-            <Link to="/orders/cart">{cartLabel}</Link>
-            <Link to='' onClick={handleLogOut}>LOG OUT</Link>
+            {
+              user ?
+              (
+                <>
+                  <Link to="/orders">ORDER HISTORY</Link> 
+                  <Link to="/orders/cart">{cartLabel}</Link>
+                  <Link to='' onClick={handleLogOut}>LOG OUT</Link>
+                </>
+              )
+              :
+              <Link to='/auth' >LOG IN</Link>
+            }
         </div>
     </nav>
   );

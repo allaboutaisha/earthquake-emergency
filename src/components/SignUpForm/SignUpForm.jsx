@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import { Navigate } from 'react-router-dom';
 
 export default class SignUpForm extends Component {
     state = {
@@ -32,6 +33,9 @@ export default class SignUpForm extends Component {
   
     render() {
       const disable = this.state.password !== this.state.confirm;
+      if(this.props.user) {
+        return <Navigate to="/" replace={true} />
+      }
       return (
         <div>
           <div className="form-container">

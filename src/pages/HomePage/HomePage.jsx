@@ -24,15 +24,17 @@ export default function HomePage({ user, setUser, setCart }) {
             setActiveCat(categoriesRef.current[1]);
             setThePackages(packages);
         }
-        // getPackages();
+        getPackages();
 
         async function getCart() {
             const cart = await ordersAPI.getCart()
             setCart(cart)
           }
-        // getCart()
+          if(user) {
+            getCart();
+          }
 
-    }, []);
+    }, [user]);
 
     async function handleAddToOrder(packageItemId) {
         const cart = await ordersAPI.addPackageToCart(packageItemId)
@@ -149,6 +151,7 @@ export default function HomePage({ user, setUser, setCart }) {
           <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
           <h1>PACKAGES</h1>
           <PackageList
+            user={user}
             thePackages={thePackages.filter(packageItem => packageItem.category.name === activeCat)}
             handleAddToOrder={handleAddToOrder}
           />

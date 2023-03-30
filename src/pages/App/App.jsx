@@ -28,11 +28,12 @@ export default function App() {
   return (
     <main className="App">
         <div className="Container">  
-          <NavBar cart={cart} />
+          <NavBar cart={cart} user={user} />
           <Routes>
-            <Route path="/home" element={<HomePage setCart={setCart} /> } />
-            <Route path="/orders" element={<OrderHistoryPage /> } />
-            <Route path="/orders/cart" element={<OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} /> } />
+            <Route path="/home" element={<HomePage setCart={setCart} setUser={setUser} user={user} /> } />
+            <Route path="/orders" element={user ? <OrderHistoryPage /> : <Navigate to="/auth" /> } />
+            <Route path="/orders/cart" element={user ? <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} />: <Navigate to="/auth" />  } />
+            <Route path="/auth" element={<AuthPage setUser={setUser} user={user} />} />
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes> 
           <Footer />

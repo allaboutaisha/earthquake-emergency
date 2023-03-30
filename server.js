@@ -19,7 +19,7 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/orders', require('./routes/api/orders'));
 
 const ensureLoggedIn = require('./config/ensureLoggedIn'); 
-app.use('/api/packages', ensureLoggedIn, require('./routes/api/packages'));
+app.use('/api/packages', require('./routes/api/packages'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
